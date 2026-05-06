@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>张君洁 · Vibe Coder & AI 产品方向求职页</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F0E8;
+  --paper:#FFFFFF;
+  --ink:#2D2A24;
+  --muted:#7A7060;
+  --light:#B8AFA0;
+  --brand:#79A38E;
+  --brand-d:#5A8A75;
+  --accent:#C4875A;
+  --accent-d:#9A653C;
+  --yellow:#F0EAB0;
+  --yellow-pale:#FAF6E5;
+  --mint:#D1E9E3;
+  --line:rgba(122,112,96,0.15);
+  --line-strong:rgba(122,112,96,0.3);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'DM Sans',system-ui,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+.container{max-width:920px;margin:0 auto;padding:48px 32px;position:relative}
+
+/* 页面装饰花藤 */
+.deco-vine{
+  position:absolute;pointer-events:none;opacity:0.4;z-index:0;
+}
+.deco-vine.tr{top:-10px;right:-20px;width:220px;height:220px}
+.deco-vine.bl{bottom:80px;left:-30px;width:160px;height:160px}
+
+@keyframes leafSway{
+  0%,100%{transform:rotate(0deg)}
+  50%{transform:rotate(4deg)}
+}
+
+/* HERO */
+.hero{margin-bottom:64px;position:relative;z-index:2}
+.hero-eyebrow{
+  font-size:11px;font-weight:500;color:var(--accent);
+  letter-spacing:0.2em;margin-bottom:14px;text-transform:uppercase;
+  display:flex;align-items:center;gap:10px;
+}
+.hero-eyebrow::before{
+  content:'';width:24px;height:1px;background:var(--accent);
+}
+.hero h1{
+  font-family:'Lora',Georgia,serif;font-style:italic;
+  font-size:56px;font-weight:400;color:var(--ink);
+  line-height:1.1;margin-bottom:18px;letter-spacing:-0.02em;
+}
+.hero h1 .hl{
+  color:var(--brand-d);
+  background:linear-gradient(transparent 62%,var(--yellow) 62%);
+  padding:0 6px;
+}
+.hero-sub{
+  font-size:17px;color:var(--muted);max-width:680px;
+  margin-bottom:24px;line-height:1.65;
+}
+.hero-sub strong{color:var(--brand-d);font-weight:600}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+.tag{
+  font-size:12px;padding:6px 14px;border-radius:20px;
+  background:var(--mint);color:var(--brand-d);font-weight:500;
+}
+.tag.accent{background:var(--yellow);color:var(--accent-d)}
+.contact-row{
+  display:flex;flex-wrap:wrap;gap:20px;font-size:13px;color:var(--muted);
+  padding-top:22px;border-top:1px solid var(--line);
+}
+.contact-row span{display:flex;align-items:center;gap:6px}
+.contact-row .lbl{color:var(--light);font-size:11px}
+
+/* sections */
+section{margin-bottom:72px;position:relative;z-index:1}
+.sec-num{
+  font-family:'DM Mono',monospace;font-size:12px;color:var(--accent);
+  letter-spacing:0.12em;margin-bottom:6px;
+}
+.sec-title{
+  font-family:'Lora',Georgia,serif;font-style:italic;
+  font-size:34px;font-weight:400;color:var(--ink);margin-bottom:8px;
+  letter-spacing:-0.01em;
+}
+.sec-desc{
+  font-size:14px;color:var(--muted);margin-bottom:28px;max-width:680px;
+}
+
+/* about cards */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.about-card{
+  background:var(--paper);border-radius:14px;padding:22px 24px;
+  border:1px solid var(--line);
+}
+.about-card h3{
+  font-size:13px;font-weight:600;color:var(--brand-d);
+  margin-bottom:8px;letter-spacing:0.02em;
+  display:flex;align-items:center;gap:8px;
+}
+.about-card h3::before{
+  content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);
+}
+.about-card p{font-size:13.5px;color:var(--ink);line-height:1.65}
+
+/* hero project: flow */
+.hero-project{
+  background:linear-gradient(135deg,var(--paper) 0%,var(--yellow-pale) 100%);
+  border-radius:20px;padding:36px 40px;
+  border:1px solid var(--line);margin-bottom:24px;
+  position:relative;overflow:hidden;
+}
+.hp-corner{
+  position:absolute;top:0;right:0;width:120px;height:120px;
+  pointer-events:none;opacity:0.5;
+}
+.hp-flag{
+  display:inline-block;font-size:10px;padding:4px 12px;
+  border-radius:14px;background:var(--accent);color:#fff;
+  font-weight:500;margin-bottom:12px;letter-spacing:0.05em;
+}
+.hp-name{
+  font-size:26px;font-weight:600;color:var(--ink);margin-bottom:8px;
+  font-family:'Lora',serif;letter-spacing:-0.01em;
+}
+.hp-tagline{
+  font-size:15px;font-style:italic;color:var(--accent-d);
+  font-family:'Lora',serif;margin-bottom:18px;
+}
+.hp-stack{
+  display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px;
+}
+.stack-tag{
+  font-size:10px;padding:3px 10px;border-radius:5px;
+  background:rgba(121,163,142,0.12);color:var(--brand-d);
+  font-family:'DM Mono',monospace;font-weight:500;
+}
+
+/* feature highlights */
+.features{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:16px;
+  margin:24px 0;
+}
+.feature{
+  background:rgba(255,255,255,0.6);border-radius:12px;
+  padding:18px 20px;border:1px solid var(--line);
+}
+.feature-num{
+  font-family:'DM Mono',monospace;font-size:11px;color:var(--accent);
+  letter-spacing:0.1em;margin-bottom:6px;
+}
+.feature-name{
+  font-size:14px;font-weight:600;color:var(--ink);margin-bottom:6px;
+}
+.feature-desc{font-size:12.5px;color:var(--muted);line-height:1.55}
+
+/* visual showcase */
+.showcase-title{
+  font-size:14px;font-weight:600;color:var(--brand-d);
+  margin:24px 0 12px;display:flex;align-items:center;gap:8px;
+}
+.showcase-title::before{
+  content:'✦';color:var(--accent);
+}
+.showcase-grid{
+  display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;
+  margin-bottom:18px;
+}
+.show-card{
+  background:#fff;border-radius:12px;border:1px solid var(--line);
+  padding:18px 16px;text-align:center;
+}
+.show-svg{height:120px;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.show-name{font-size:12px;font-weight:600;color:var(--ink);margin-bottom:4px}
+.show-desc{font-size:10.5px;color:var(--muted);line-height:1.45}
+
+/* prose */
+.proj-body{font-size:14px;color:var(--ink);line-height:1.75}
+.proj-body p{margin-bottom:10px}
+.proj-body strong{color:var(--brand-d);font-weight:600}
+
+/* secondary projects */
+.project{
+  background:var(--paper);border-radius:14px;padding:24px 28px;
+  border:1px solid var(--line);margin-bottom:14px;
+}
+.proj-head{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  margin-bottom:6px;flex-wrap:wrap;gap:8px;
+}
+.proj-name{
+  font-size:17px;font-weight:600;color:var(--ink);
+  display:flex;align-items:center;gap:10px;
+}
+.proj-flag{
+  font-size:10px;padding:3px 10px;border-radius:12px;
+  background:var(--mint);color:var(--brand-d);font-weight:500;
+}
+.proj-meta{font-size:12px;color:var(--light);font-family:'DM Mono',monospace}
+.proj-tagline{
+  font-style:italic;color:var(--accent-d);font-family:'Lora',serif;
+  font-size:13.5px;margin-bottom:12px;
+}
+.proj-stack{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+
+/* prompt blocks */
+.prompt-block{
+  background:var(--paper);border-radius:14px;border:1px solid var(--line);
+  padding:24px 28px;margin-bottom:14px;
+}
+.prompt-block h3{
+  font-size:14px;font-weight:600;margin-bottom:6px;color:var(--ink);
+}
+.prompt-meta{
+  font-size:11px;color:var(--accent);margin-bottom:12px;
+  font-family:'DM Mono',monospace;letter-spacing:0.05em;
+}
+.prompt-code{
+  background:var(--yellow-pale);border-left:3px solid var(--accent);
+  border-radius:6px;padding:14px 16px;
+  font-family:'DM Mono',monospace;font-size:12px;
+  color:#5A4520;line-height:1.7;white-space:pre-wrap;word-break:break-word;
+  margin-bottom:10px;
+}
+.prompt-result{
+  font-size:13px;color:var(--muted);line-height:1.6;font-style:italic;
+}
+.prompt-result strong{color:var(--brand-d);font-weight:600;font-style:normal}
+
+/* timeline */
+.timeline{position:relative;padding-left:24px}
+.timeline::before{
+  content:'';position:absolute;left:6px;top:8px;bottom:8px;
+  width:1px;background:var(--line);
+}
+.tl-item{position:relative;margin-bottom:24px}
+.tl-item::before{
+  content:'';position:absolute;left:-24px;top:8px;
+  width:13px;height:13px;border-radius:50%;background:var(--brand);
+  border:3px solid var(--bg);
+}
+.tl-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  margin-bottom:4px;flex-wrap:wrap;gap:6px;
+}
+.tl-role{font-size:14px;font-weight:600;color:var(--ink)}
+.tl-org{font-size:13px;color:var(--accent);margin-bottom:8px}
+.tl-date{font-size:11px;color:var(--light);font-family:'DM Mono',monospace}
+.tl-points{font-size:13px;color:var(--ink);line-height:1.65}
+.tl-points li{
+  list-style:none;padding-left:14px;position:relative;margin-bottom:4px;
+}
+.tl-points li::before{
+  content:'•';position:absolute;left:0;color:var(--brand);
+}
+
+/* skills */
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.skill-card{
+  background:var(--paper);border-radius:12px;padding:18px 22px;
+  border:1px solid var(--line);
+}
+.skill-card h4{
+  font-size:13px;font-weight:600;color:var(--brand-d);
+  margin-bottom:8px;display:flex;align-items:center;gap:8px;
+}
+.skill-card h4 .dot{
+  width:8px;height:8px;border-radius:50%;background:var(--accent);
+}
+.skill-card p{font-size:12.5px;color:var(--ink);line-height:1.6}
+
+/* footer */
+footer{
+  margin-top:80px;padding-top:32px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:16px;
+}
+.foot-l{font-size:12px;color:var(--light);font-family:'DM Mono',monospace}
+.foot-r{display:flex;gap:14px}
+.foot-r a{
+  font-size:12px;color:var(--brand-d);text-decoration:none;
+  border-bottom:1px solid var(--line);padding-bottom:2px;
+}
+.foot-r a:hover{color:var(--accent);border-color:var(--accent)}
+
+@media (max-width:680px){
+  .hero h1{font-size:38px}
+  .about-grid,.skills-grid,.features,.showcase-grid{grid-template-columns:1fr}
+  .container{padding:32px 20px}
+  .hero-project{padding:24px 20px}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<!-- 装饰花藤 -->
+<svg class="deco-vine tr" viewBox="0 0 220 220" fill="none">
+  <path d="M220 0 Q190 30 170 70 Q155 110 175 150" stroke="#79A38E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M170 70 Q145 60 128 65" stroke="#79A38E" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  <path d="M165 130 Q145 120 130 125" stroke="#79A38E" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  <ellipse cx="125" cy="64" rx="10" ry="6" fill="#79A38E" opacity="0.7" transform="rotate(-25,125,64)" style="transform-origin:125px 64px;animation:leafSway 3s ease-in-out infinite"/>
+  <ellipse cx="160" cy="100" rx="9" ry="6" fill="#D1E9E3" opacity="0.85" transform="rotate(15,160,100)" style="transform-origin:160px 100px;animation:leafSway 3.5s ease-in-out 0.3s infinite"/>
+  <ellipse cx="127" cy="125" rx="9" ry="5.5" fill="#79A38E" opacity="0.6" transform="rotate(-30,127,125)" style="transform-origin:127px 125px;animation:leafSway 4s ease-in-out 0.6s infinite"/>
+  <circle cx="120" cy="68" r="3" fill="#F0EAB0" stroke="#A89840" stroke-width="0.8"/>
+  <circle cx="155" cy="105" r="2.5" fill="#F0EAB0" stroke="#A89840" stroke-width="0.7"/>
+</svg>
+
+<svg class="deco-vine bl" viewBox="0 0 160 160" fill="none">
+  <path d="M0 160 Q30 130 50 100 Q70 70 60 30" stroke="#79A38E" stroke-width="1.4" fill="none" stroke-linecap="round" opacity="0.6"/>
+  <ellipse cx="55" cy="35" rx="8" ry="5" fill="#D1E9E3" opacity="0.8" transform="rotate(-20,55,35)" style="transform-origin:55px 35px;animation:leafSway 3.2s ease-in-out infinite"/>
+  <ellipse cx="40" cy="80" rx="9" ry="5.5" fill="#79A38E" opacity="0.7" transform="rotate(20,40,80)" style="transform-origin:40px 80px;animation:leafSway 3.7s ease-in-out 0.4s infinite"/>
+  <circle cx="58" cy="32" r="2.5" fill="#F0EAB0" stroke="#A89840" stroke-width="0.7"/>
+</svg>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">VIBE CODER · AI PRODUCT · PROMPT ENGINEER</div>
+  <h1>从城乡规划研究生<br>到 <span class="hl">AI 产品方向</span> 实习生</h1>
+  <p class="hero-sub">
+    24 岁，城乡规划在读硕士，但已通过两个独立 <strong>Vibe Coding 项目</strong>
+    完成从产品定位、PRD 撰写、Prompt 设计、动态可视化到全栈开发的完整闭环。
+    Claude Code 是我每天打开的工具——<strong>我不是「了解 AI」，是在「用 AI 工作」</strong>。
+  </p>
+  <div class="hero-tags">
+    <span class="tag accent">Vibe Coding</span>
+    <span class="tag">Prompt Engineering</span>
+    <span class="tag">LLM API 工程化</span>
+    <span class="tag">PRD 设计</span>
+    <span class="tag">动态视觉系统</span>
+    <span class="tag">用户研究</span>
+    <span class="tag">数据驱动决策</span>
+  </div>
+  <div class="contact-row">
+    <span><span class="lbl">姓名</span> 张君洁</span>
+    <span><span class="lbl">学校</span> 哈工大（深圳）城乡规划硕士</span>
+    <span><span class="lbl">联系</span> 17774977869</span>
+    <span><span class="lbl">邮箱</span> 3051133968@qq.com</span>
+    <span><span class="lbl">到岗</span> ASAP · 每周 4-5 天</span>
+  </div>
+</div>
+
+<!-- 个人定位 -->
+<section>
+  <div class="sec-num">01 / ABOUT</div>
+  <h2 class="sec-title">为什么是 AI 产品方向</h2>
+  <p class="sec-desc">
+    我的「不一样」在于把规划训练里「将抽象用户需求转化为可执行空间方案」的能力，
+    迁移到了 AI 产品上——把模糊的用户意图翻译成结构化 Prompt 与可落地产品策略。
+  </p>
+  <div class="about-grid">
+    <div class="about-card">
+      <h3>真实在用 AI 工具开发</h3>
+      <p>Claude Code 是我每天打开的工具。已用它独立从 0 搭建两款 React 全栈应用。
+      能给出有效 Prompt 让模型干活、能读代码、能在模型偏离需求时及时纠偏。</p>
+    </div>
+    <div class="about-card">
+      <h3>产品哲学思考能力</h3>
+      <p>flow 项目第一版是「滴答清单 clone」，迭代到 v3.0 改为「节奏向导」——
+      会主动质疑「为什么做这个」而不只是「怎么做」。</p>
+    </div>
+    <div class="about-card">
+      <h3>动态视觉设计能力</h3>
+      <p>把产品逻辑转化为情感化视觉语言——草地花园根据任务完成度从枯萎到开花、
+      花环番茄钟随时间盛开旋转。这种「视觉即反馈」的设计是我的独特优势。</p>
+    </div>
+    <div class="about-card">
+      <h3>持续输出而非围观</h3>
+      <p>在校期间已独立完成 3 个真实项目（学术研究 + 情侣应用 + 时间管理工具），
+      每个都从 0 到上线，全程 PRD、UI、开发、调优闭环。</p>
+    </div>
+  </div>
+</section>
+
+<!-- flow 主项目 -->
+<section>
+  <div class="sec-num">02 / FLAGSHIP PROJECT</div>
+  <h2 class="sec-title">flow · AI 时间节奏向导</h2>
+  <p class="sec-desc">
+    我最骄傲的 Vibe Coding 作品——独立完成产品定位、PRD、动态视觉设计、Prompt 工程、全栈开发。
+  </p>
+
+  <div class="hero-project">
+    <svg class="hp-corner" viewBox="0 0 120 120" fill="none">
+      <path d="M120 0 Q100 25 90 55 Q80 85 95 110" stroke="#79A38E" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <ellipse cx="92" cy="55" rx="8" ry="5" fill="#79A38E" opacity="0.6" transform="rotate(-20,92,55)" style="transform-origin:92px 55px;animation:leafSway 3.2s ease-in-out infinite"/>
+      <ellipse cx="105" cy="100" rx="7" ry="4.5" fill="#D1E9E3" opacity="0.8" transform="rotate(20,105,100)"/>
+      <circle cx="95" cy="58" r="2.5" fill="#F0EAB0" stroke="#A89840" stroke-width="0.7"/>
+    </svg>
+
+    <span class="hp-flag">FLAGSHIP · 2026.04 - 至今</span>
+    <h3 class="hp-name">flow</h3>
+    <div class="hp-tagline">「不是任务收纳盒，是节奏向导——帮你好好开始、好好结束每一天」</div>
+    <div class="hp-stack">
+      <span class="stack-tag">React 18</span>
+      <span class="stack-tag">TypeScript</span>
+      <span class="stack-tag">Vite</span>
+      <span class="stack-tag">Tailwind</span>
+      <span class="stack-tag">Zustand</span>
+      <span class="stack-tag">Supabase</span>
+      <span class="stack-tag">Claude API</span>
+      <span class="stack-tag">Claude Code</span>
+    </div>
+
+    <div class="proj-body">
+      <p><strong>产品定位与差异化：</strong>从 0 设计与滴答清单的差异化定位。
+      把竞品的「任务收纳」痛点重新拆解为「拖延启动 + 缺乏节奏」的更深层痛点。
+      完成 v1.0 → v3.0 三版 PRD 迭代，每版均经过用户痛点重审与功能取舍。</p>
+    </div>
+
+    <!-- 四大功能 -->
+    <div class="features">
+      <div class="feature">
+        <div class="feature-num">FEATURE 01</div>
+        <div class="feature-name">LLM 启动引导卡</div>
+        <div class="feature-desc">每日打开 app 推荐一件事，附 ≤20 字推荐理由。
+        基于时段、状态、认知负荷动态决策。</div>
+      </div>
+      <div class="feature">
+        <div class="feature-num">FEATURE 02</div>
+        <div class="feature-name">认知负荷标签</div>
+        <div class="feature-desc">深度 / 执行 / 轻松——替代传统优先级，
+        匹配能量而非重要性。</div>
+      </div>
+      <div class="feature">
+        <div class="feature-num">FEATURE 03</div>
+        <div class="feature-name">时间余量条</div>
+        <div class="feature-desc">彩色色块可视化今天还能装下多少任务，
+        替代日历格子的离散感。</div>
+      </div>
+      <div class="feature">
+        <div class="feature-num">FEATURE 04</div>
+        <div class="feature-name">60 秒收尾仪式</div>
+        <div class="feature-desc">含心情瓶情绪记录与明日锚点任务，
+        帮用户「好好结束今天」。</div>
+      </div>
+    </div>
+
+    <!-- 动态视觉系统（核心卖点） -->
+    <div class="showcase-title">独家创新：随用户行为生长的视觉反馈系统</div>
+    <div class="proj-body" style="margin-bottom:14px">
+      <p>flow 区别于所有竞品的关键卖点——<strong>视觉即反馈</strong>。
+      产品的所有核心交互都伴随着「会生长、会回应」的有机视觉变化。</p>
+    </div>
+
+    <div class="showcase-grid">
+      <!-- 草地花园 -->
+      <div class="show-card">
+        <div class="show-svg">
+          <svg viewBox="0 0 140 100" width="120" height="86">
+            <!-- 草丛 -->
+            <g style="transform-origin:30px 90px;animation:leafSway 3s ease-in-out infinite">
+              <path d="M30 90 Q28 70 30 50" stroke="#5A8A75" stroke-width="1" fill="none"/>
+              <ellipse cx="26" cy="65" rx="3" ry="5" fill="#79A38E" transform="rotate(-30,26,65)"/>
+              <ellipse cx="34" cy="58" rx="3" ry="5" fill="#79A38E" transform="rotate(30,34,58)"/>
+            </g>
+            <g style="transform-origin:55px 90px;animation:leafSway 3.5s ease-in-out 0.4s infinite">
+              <path d="M55 90 Q53 60 55 35" stroke="#5A8A75" stroke-width="1.2" fill="none"/>
+              <ellipse cx="50" cy="55" rx="4" ry="5.5" fill="#79A38E" transform="rotate(-30,50,55)"/>
+              <ellipse cx="60" cy="48" rx="4" ry="5.5" fill="#79A38E" transform="rotate(30,60,48)"/>
+              <!-- 顶端花 -->
+              <g transform="translate(55 32) scale(0.5)">
+                <ellipse cx="0" cy="-7" rx="3.2" ry="6.5" fill="#FAFAF7" stroke="#D9C9A8" stroke-width="0.8"/>
+                <ellipse cx="0" cy="-7" rx="3.2" ry="6.5" fill="#FAFAF7" stroke="#D9C9A8" stroke-width="0.8" transform="rotate(60)"/>
+                <ellipse cx="0" cy="-7" rx="3.2" ry="6.5" fill="#FAFAF7" stroke="#D9C9A8" stroke-width="0.8" transform="rotate(120)"/>
+                <ellipse cx="0" cy="-7" rx="3.2" ry="6.5" fill="#FAFAF7" stroke="#D9C9A8" stroke-width="0.8" transform="rotate(180)"/>
+                <ellipse cx="0" cy="-7" rx="3.2" ry="6.5" fill="#FAFAF7" stroke="#D9C9A8" stroke-width="0.8" transform="rotate(240)"/>
+                <ellipse cx="0" cy="-7" rx="3.2" ry="6.5" fill="#FAFAF7" stroke="#D9C9A8" stroke-width="0.8" transform="rotate(300)"/>
+                <circle cx="0" cy="0" r="3.2" fill="#F2D5A8"/>
+              </g>
+            </g>
+            <g style="transform-origin:85px 90px;animation:leafSway 4s ease-in-out 0.7s infinite">
+              <path d="M85 90 Q83 65 85 45" stroke="#5A8A75" stroke-width="1.1" fill="none"/>
+              <ellipse cx="80" cy="65" rx="3.5" ry="5" fill="#79A38E" transform="rotate(-30,80,65)"/>
+              <ellipse cx="90" cy="55" rx="3.5" ry="5" fill="#79A38E" transform="rotate(30,90,55)"/>
+              <g transform="translate(85 42) scale(0.45)">
+                <ellipse cx="0" cy="-7" rx="3.2" ry="6.5" fill="#FAFAF7" stroke="#D9C9A8" stroke-width="0.8"/>
+                <ellipse cx="0" cy="-7" rx="3.2" ry="6.5" fill="#FAFAF7" stroke="#D9C9A8" stroke-width="0.8" transform="rotate(72)"/>
+                <ellipse cx="0" cy="-7" rx="3.2" ry="6.5" fill="#FAFAF7" stroke="#D9C9A8" stroke-width="0.8" transform="rotate(144)"/>
+                <ellipse cx="0" cy="-7" rx="3.2" ry="6.5" fill="#FAFAF7" stroke="#D9C9A8" stroke-width="0.8" transform="rotate(216)"/>
+                <ellipse cx="0" cy="-7" rx="3.2" ry="6.5" fill="#FAFAF7" stroke="#D9C9A8" stroke-width="0.8" transform="rotate(288)"/>
+                <circle cx="0" cy="0" r="3.2" fill="#F2D5A8"/>
+              </g>
+            </g>
+            <g style="transform-origin:115px 90px;animation:leafSway 3.3s ease-in-out 1s infinite">
+              <path d="M115 90 Q113 70 115 55" stroke="#5A8A75" stroke-width="1" fill="none"/>
+              <ellipse cx="111" cy="70" rx="3" ry="4.5" fill="#79A38E" transform="rotate(-30,111,70)"/>
+            </g>
+            <!-- 萤火虫 -->
+            <circle cx="35" cy="20" r="3" fill="#F0E060" opacity="0.7"/>
+            <circle cx="100" cy="15" r="2.5" fill="#F0E060" opacity="0.6"/>
+          </svg>
+        </div>
+        <div class="show-name">草地花园进度系统</div>
+        <div class="show-desc">40 株 SVG 植物随任务完成度从枯萎→生长→开花→萤火虫闪烁</div>
+      </div>
+
+      <!-- 花环番茄钟 -->
+      <div class="show-card">
+        <div class="show-svg">
+          <svg viewBox="0 0 120 120" width="100" height="100">
+            <circle cx="60" cy="60" r="42" stroke="#D1E9E3" stroke-width="3" fill="none"/>
+            <circle cx="60" cy="60" r="42" stroke="#79A38E" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="263.9" stroke-dashoffset="80" transform="rotate(-90 60 60)"/>
+            <!-- 花环 -->
+            <g>
+              <g transform="rotate(0 60 60)"><ellipse cx="60" cy="13" rx="3" ry="4.5" fill="#F0EAB0" stroke="#A89840" stroke-width="0.5"/></g>
+              <g transform="rotate(45 60 60)"><ellipse cx="60" cy="13" rx="3" ry="4.5" fill="#F0EAB0" stroke="#A89840" stroke-width="0.5"/></g>
+              <g transform="rotate(90 60 60)"><ellipse cx="60" cy="13" rx="3" ry="4.5" fill="#F0EAB0" stroke="#A89840" stroke-width="0.5"/></g>
+              <g transform="rotate(135 60 60)"><ellipse cx="60" cy="13" rx="3" ry="4.5" fill="#F0EAB0" stroke="#A89840" stroke-width="0.5"/></g>
+              <g transform="rotate(180 60 60)"><ellipse cx="60" cy="13" rx="3" ry="4.5" fill="#F0EAB0" stroke="#A89840" stroke-width="0.5"/></g>
+              <g transform="rotate(225 60 60)"><ellipse cx="60" cy="13" rx="3" ry="4.5" fill="#F0EAB0" stroke="#A89840" stroke-width="0.5"/></g>
+              <g transform="rotate(270 60 60)"><ellipse cx="60" cy="13" rx="3" ry="4.5" fill="#F0EAB0" stroke="#A89840" stroke-width="0.5"/></g>
+              <g transform="rotate(315 60 60)"><ellipse cx="60" cy="13" rx="3" ry="4.5" fill="#F0EAB0" stroke="#A89840" stroke-width="0.5"/></g>
+              <g transform="rotate(22.5 60 60)"><ellipse cx="60" cy="15" rx="2" ry="3.5" fill="#D1E9E3"/></g>
+              <g transform="rotate(67.5 60 60)"><ellipse cx="60" cy="15" rx="2" ry="3.5" fill="#D1E9E3"/></g>
+              <g transform="rotate(112.5 60 60)"><ellipse cx="60" cy="15" rx="2" ry="3.5" fill="#D1E9E3"/></g>
+              <g transform="rotate(157.5 60 60)"><ellipse cx="60" cy="15" rx="2" ry="3.5" fill="#D1E9E3"/></g>
+              <g transform="rotate(202.5 60 60)"><ellipse cx="60" cy="15" rx="2" ry="3.5" fill="#D1E9E3"/></g>
+              <g transform="rotate(247.5 60 60)"><ellipse cx="60" cy="15" rx="2" ry="3.5" fill="#D1E9E3"/></g>
+              <g transform="rotate(292.5 60 60)"><ellipse cx="60" cy="15" rx="2" ry="3.5" fill="#D1E9E3"/></g>
+              <g transform="rotate(337.5 60 60)"><ellipse cx="60" cy="15" rx="2" ry="3.5" fill="#D1E9E3"/></g>
+            </g>
+            <text x="60" y="65" text-anchor="middle" font-family="DM Mono" font-size="14" fill="#2D3A35">25:00</text>
+          </svg>
+        </div>
+        <div class="show-name">花环番茄钟</div>
+        <div class="show-desc">16 朵雏菊环绕进度环，完成时整体绽放旋转 22.5°</div>
+      </div>
+
+      <!-- 植物成长 -->
+      <div class="show-card">
+        <div class="show-svg">
+          <svg viewBox="0 0 120 100" width="100" height="86">
+            <!-- 盆栽 -->
+            <path d="M40 78 L38 92 Q38 94 40 94 L80 94 Q82 94 82 92 L80 78 Z" fill="#C4A882"/>
+            <rect x="36" y="74" width="48" height="8" rx="3" fill="#B8956E"/>
+            <ellipse cx="60" cy="74" rx="22" ry="3" fill="#7A5520"/>
+            <!-- 茎 -->
+            <path d="M60 74 Q60 50 60 26" stroke="#5A8A5A" stroke-width="2" stroke-linecap="round"/>
+            <path d="M60 50 Q45 40 35 42" stroke="#5A8A5A" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+            <path d="M60 42 Q73 32 82 35" stroke="#5A8A5A" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+            <!-- 叶 -->
+            <g style="transform-origin:60px 22px;animation:leafSway 3s ease-in-out infinite">
+              <ellipse cx="60" cy="18" rx="9" ry="11" fill="#79A38E"/>
+              <ellipse cx="60" cy="16" rx="6" ry="8" fill="#8FC8A8"/>
+            </g>
+            <g style="transform-origin:35px 42px;animation:leafSway 3.5s ease-in-out 0.5s infinite">
+              <ellipse cx="33" cy="38" rx="10" ry="6" fill="#79A38E" transform="rotate(-30,33,38)"/>
+            </g>
+            <g style="transform-origin:82px 35px;animation:leafSway 4s ease-in-out 0.8s infinite">
+              <ellipse cx="84" cy="32" rx="10" ry="6" fill="#79A38E" transform="rotate(28,84,32)"/>
+            </g>
+            <!-- 花朵 -->
+            <g transform="translate(60 12) scale(0.5)">
+              <ellipse cx="0" cy="-7" rx="3.2" ry="6.5" fill="#F0EAB0" stroke="#A89840" stroke-width="0.8"/>
+              <ellipse cx="0" cy="-7" rx="3.2" ry="6.5" fill="#F0EAB0" stroke="#A89840" stroke-width="0.8" transform="rotate(60)"/>
+              <ellipse cx="0" cy="-7" rx="3.2" ry="6.5" fill="#F0EAB0" stroke="#A89840" stroke-width="0.8" transform="rotate(120)"/>
+              <ellipse cx="0" cy="-7" rx="3.2" ry="6.5" fill="#F0EAB0" stroke="#A89840" stroke-width="0.8" transform="rotate(180)"/>
+              <ellipse cx="0" cy="-7" rx="3.2" ry="6.5" fill="#F0EAB0" stroke="#A89840" stroke-width="0.8" transform="rotate(240)"/>
+              <ellipse cx="0" cy="-7" rx="3.2" ry="6.5" fill="#F0EAB0" stroke="#A89840" stroke-width="0.8" transform="rotate(300)"/>
+              <circle cx="0" cy="0" r="3" fill="#E8C840"/>
+            </g>
+          </svg>
+        </div>
+        <div class="show-name">五阶段植物成长</div>
+        <div class="show-desc">专注时长累计驱动种子→花苞→盛开→结果</div>
+      </div>
+    </div>
+
+    <div class="proj-body" style="margin-top:24px">
+      <p><strong>动态视觉的产品价值：</strong>这些视觉不只是装饰——
+      草地从枯萎到开花给用户即时正反馈，比数字进度条更有情感连接；
+      花环番茄钟把「专注」具象化为「养花」，降低开始的心理门槛；
+      植物成长系统让长期专注变成可见的「养成」。这是 flow 的核心情感连接点。</p>
+
+      <p><strong>Prompt 工程系统：</strong>独立设计 3 套 Prompt 子系统——
+      任务推荐 Prompt（含时段/状态/认知负荷规则）、自然语言意图解析 Prompt
+      （"明天下午开会"→结构化任务对象）、收尾肯定语 Prompt。
+      通过 System Prompt 强制 JSON 输出 + Few-shot 模板控制返回稳定性。</p>
+
+      <p><strong>Vibe Coding 工作方法论：</strong>沉淀出
+      「CLAUDE.md + DESIGN.md 双文档驱动」开发模式——
+      将设计规范、组件约定、动效参数、色彩 token 全部固化为模型可读上下文，
+      让 Claude Code 在长会话中保持设计一致性，显著降低代码漂移与返工成本。
+      熟练拆解需求成可被 AI 高效执行的指令颗粒度。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 其他项目 -->
+<section>
+  <div class="sec-num">03 / OTHER PROJECTS</div>
+  <h2 class="sec-title">其他 AI 实战项目</h2>
+
+  <!-- BuBu Yier -->
+  <div class="project">
+    <div class="proj-head">
+      <div class="proj-name">
+        BuBu &amp; Yier's Secret Base
+        <span class="proj-flag">Vibe Coding 项目</span>
+      </div>
+      <div class="proj-meta">2026.02 - 2026.04</div>
+    </div>
+    <div class="proj-tagline">用「行星网」隐喻重新定义情侣分享</div>
+    <div class="proj-stack">
+      <span class="stack-tag">React 18</span>
+      <span class="stack-tag">Vite</span>
+      <span class="stack-tag">Tailwind</span>
+      <span class="stack-tag">Framer Motion</span>
+      <span class="stack-tag">Node.js</span>
+      <span class="stack-tag">Express</span>
+    </div>
+    <div class="proj-body">
+      <p><strong>交互范式创新：</strong>提出「日常行星网」交互隐喻——
+      双方分享如行星在各自轨道运行，点击图标查看详情并留言。
+      突破传统 IM 单一聊天流的扁平结构。</p>
+
+      <p><strong>情感场景产品化：</strong>「今晚见吗？」一键预约动效（点击后界面切换为合体状态 + 心跳动画）、
+      「日常步调」生活同步双栏、「心情花园」情绪寄存、慢交流秘密信箱、
+      拍立得质感照片墙等 6+ 模块。把抽象情感需求拆解为可交互产品。</p>
+
+      <p><strong>原创 IP 视觉系统：</strong>主导 BuBu（熊猫）+ Yier（小熊）IP 形象设计，
+      构建手绘风全站视觉语言；使用 Framer Motion 打造细腻物理感交互；
+      完成移动端、平板、桌面端三端响应式适配。</p>
+
+      <p><strong>Vibe Coding 实战：</strong>使用 Claude Code 配合 VSCode 完成前后端一体化开发，
+      从 IP 形象到 Node.js Express 实时数据同步全栈独立完成。</p>
+    </div>
+  </div>
+
+  <!-- 西关研究 -->
+  <div class="project">
+    <div class="proj-head">
+      <div class="proj-name">
+        西关历史街区主客感知分析
+        <span class="proj-flag">硕士课题 · LLM 工程化</span>
+      </div>
+      <div class="proj-meta">2025.10 - 至今</div>
+    </div>
+    <div class="proj-tagline">用 LLM 量化 8 万条文本的情绪与认知</div>
+    <div class="proj-stack">
+      <span class="stack-tag">Python</span>
+      <span class="stack-tag">DeepSeek-V3 API</span>
+      <span class="stack-tag">Pandas</span>
+      <span class="stack-tag">ArcGIS</span>
+      <span class="stack-tag">GWR</span>
+      <span class="stack-tag">Random Forest</span>
+    </div>
+    <div class="proj-body">
+      <p><strong>LLM 工程化应用：</strong>调用 DeepSeek-V3 对近 8 万条社交媒体文本进行
+      6 维情绪打分（1-5 NRS）与 15 维场景认知评分。
+      <strong>关键决策：</strong>把情绪与场景拆分为两次独立 LLM 调用，避免单次任务过重导致注意力稀释。</p>
+
+      <p><strong>混合架构（Rule + LLM）：</strong>设计「关键词规则预筛 + LLM 深度语义判断」双层架构识别居民/游客身份，
+      基于行为轨迹与游客凝视特征。该思路对应业界 HITL 与 Rule-Based + LLM 工业实践。</p>
+
+      <p><strong>成本控制思维：</strong>规则预筛把 70% 明显样本拦截在 LLM 调用前，
+      仅对模糊样本付费深度判断，配合 Prompt 长度优化与批处理，
+      整个研究的 LLM 成本控制在数十元规模。</p>
+
+      <p><strong>完整数据闭环：</strong>Python 多平台爬虫 → Pandas 清洗 → LLM 量化 →
+      200m 网格空间聚合 → GWR 地理加权回归 → 主客感知差异指数热力图 → 微观尺度更新策略输出。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Prompt 工程实战 -->
+<section>
+  <div class="sec-num">04 / PROMPT ENGINEERING</div>
+  <h2 class="sec-title">Prompt 工程实战节选</h2>
+  <p class="sec-desc">
+    真实项目里我设计的 Prompt 系统——不是 Demo，是产品里跑着的代码。
+  </p>
+
+  <div class="prompt-block">
+    <h3>flow · 启动引导卡推荐 Prompt</h3>
+    <div class="prompt-meta">USE CASE  ·  USER OPENS APP / NEEDS RECOMMENDATION</div>
+<div class="prompt-code">你是专注教练。根据以下信息推荐用户现在最适合开始的一个任务。
+
+输入：
+- 当前时间：{time}，时段：{period}
+- 用户今日状态：{mood}
+- 今日待办（含认知负荷）：{tasks}
+- 今日已完成专注时段：{sessions}
+
+返回严格 JSON（不要任何解释文字）：
+{ "taskId": "xxx", "reason": "≤20字推荐理由" }
+
+约束：
+- 上午精力充沛 → 优先 deep 类
+- 疲惫状态 → 优先 easy 类
+- 已完成 ≥3 个专注 → 优先 easy 类避免过度消耗</div>
+    <p class="prompt-result"><strong>设计要点：</strong>
+    System Prompt 内置专注教练人设；强制 JSON 输出便于前端解析；
+    通过约束规则把抽象推荐逻辑显式化，避免模型「自由发挥」。</p>
+  </div>
+
+  <div class="prompt-block">
+    <h3>flow · 自然语言任务解析 Prompt</h3>
+    <div class="prompt-meta">USE CASE  ·  USER TYPES "明天下午开会，深度思考，学术"</div>
+<div class="prompt-code">你是任务解析助手。用户输入自然语言，你提取结构化任务对象。
+
+输入示例："明天下午三点开会，深度思考，学术"
+
+返回 JSON：
+{
+  "action": "create",
+  "task": {
+    "title": "开会",
+    "dueTime": "2026-05-06T15:00:00",
+    "cognitiveLoad": "deep",
+    "listName": "学术"
+  }
+}
+
+约束：
+- 时间用 ISO 8601 格式
+- cognitiveLoad 只能是 deep / execute / easy
+- 解析失败返回 null（外层会显示「没理解，换个说法」）</div>
+    <p class="prompt-result"><strong>设计要点：</strong>
+    Few-shot 示例引导模型理解输出格式；显式定义失败处理逻辑；
+    用强枚举约束控制返回值的可控性。</p>
+  </div>
+
+  <div class="prompt-block">
+    <h3>西关研究 · 情绪量化 Prompt（拆分独立调用）</h3>
+    <div class="prompt-meta">USE CASE  ·  EMOTION SCORING ON SOCIAL TEXT</div>
+<div class="prompt-code">对以下文本进行 6 维情绪强度打分（1-5 NRS，不是 Likert 量表）：
+- 安全感、放松感、历史感、趣味感、无聊感、压抑/烦扰感
+
+文本：{text}
+
+返回 JSON：
+{
+  "safety": int, "relax": int, "history": int,
+  "fun": int, "boring": int, "stress": int,
+  "evidence": "支持评分的关键短句"
+}
+
+约束：
+- 每个维度独立打分，不互斥
+- 文本未提及该维度时返回 3（中性）
+- evidence 必须从原文中摘取，不得改写</div>
+    <p class="prompt-result"><strong>设计要点：</strong>
+    把情绪与场景拆分为两次独立调用避免注意力稀释；
+    要求模型返回 evidence 字段做归因可解释性；
+    NRS 替代 Likert 让 LLM 输出更稳定。</p>
+  </div>
+</section>
+
+<!-- 经历 -->
+<section>
+  <div class="sec-num">05 / EXPERIENCE</div>
+  <h2 class="sec-title">实习与教育</h2>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-head">
+        <div>
+          <div class="tl-role">用户运营实习生 · 某线上健身平台</div>
+        </div>
+        <div class="tl-date">2025.06 — 2025.09</div>
+      </div>
+      <ul class="tl-points">
+        <li>独立负责 60+ 微信群（3-5 人小群）精细化运营，覆盖学员 250+，搭建从用户建档到进度追踪的 1V1 SOP</li>
+        <li>策划「21 天挑战赛」「健身知识问答」系列活动，社群日均互动量提升 40%</li>
+        <li>负责每日内容制作与每周复盘，主导两次内容改版使点击率提升 15%</li>
+      </ul>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-head">
+        <div>
+          <div class="tl-role">项目运营实习生 · 重庆大学规划设计研究院</div>
+        </div>
+        <div class="tl-date">2024.03 — 2024.06</div>
+      </div>
+      <ul class="tl-points">
+        <li>参与国家级学科设计竞赛举办，接待全国数百位高校师生</li>
+        <li>运用 SPSS、GIS、CAD 完成重庆十五分钟生活圈分析与多灾害预测</li>
+      </ul>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-head">
+        <div>
+          <div class="tl-role">城乡规划专业型硕士 · 哈尔滨工业大学（深圳）</div>
+        </div>
+        <div class="tl-date">2025.09 — 至今</div>
+      </div>
+      <ul class="tl-points">
+        <li>C9 高校 · 985 工程 · 二等奖学金</li>
+        <li>主修：城市数据研究方法（Python/SPSS）、GIS、研究方法论</li>
+      </ul>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-head">
+        <div>
+          <div class="tl-role">城乡规划五年制本科 · 重庆大学</div>
+        </div>
+        <div class="tl-date">2020.09 — 2025.06</div>
+      </div>
+      <ul class="tl-points">
+        <li>985 工程 · GPA 3.6/4 · 优秀学生乙等综合奖学金 · 6 项校级荣誉</li>
+        <li>全国乡村社区竞赛优胜、第九届西部之光暑期规划设计竞赛佳作</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 技能 -->
+<section>
+  <div class="sec-num">06 / SKILLS</div>
+  <h2 class="sec-title">能力清单</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <h4><span class="dot"></span>Vibe Coding 与 AI Coding</h4>
+      <p>已用 Claude Code + VSCode 独立完成 2 款 React 全栈应用从 0 到 1。
+      熟悉 AI 协作开发完整流程：需求拆解→设计文档驱动→分阶段交付→Bug 排查协同→Prompt 颗粒度优化。</p>
+    </div>
+    <div class="skill-card">
+      <h4><span class="dot"></span>Prompt 工程实战</h4>
+      <p>3 个项目独立设计 Prompt 系统。掌握 System Prompt 结构化、JSON 强制输出、
+      Prompt 拆分降低注意力稀释、Few-shot 模板化、Evidence 归因、CoT 引导。</p>
+    </div>
+    <div class="skill-card">
+      <h4><span class="dot"></span>动态视觉系统设计</h4>
+      <p>SVG 生成式动效（CSS keyframes、stroke-dasharray、transform-origin）、
+      用户行为驱动的视觉反馈系统、Framer Motion 物理感交互。
+      具备「将产品逻辑转化为情感化视觉语言」的能力。</p>
+    </div>
+    <div class="skill-card">
+      <h4><span class="dot"></span>AI 工具重度使用者</h4>
+      <p>Claude Code（每日开发）、Cursor、Google AI Studio、ChatGPT、Claude、Kimi、豆包、通义千问。
+      熟悉 Prompt Engineering、SFT、Few-shot、CoT、HITL 概念。</p>
+    </div>
+    <div class="skill-card">
+      <h4><span class="dot"></span>编程与数据</h4>
+      <p>Python（爬虫、Pandas、API 集成）· TypeScript / React · SQL 基础 ·
+      ArcGIS / QGIS · SPSS · Git。</p>
+    </div>
+    <div class="skill-card">
+      <h4><span class="dot"></span>产品与设计</h4>
+      <p>PRD 撰写（v1→v3 迭代经验）· 用户研究 · 需求拆解 ·
+      Figma · Photoshop · AI · Sketch · AutoCAD · 秀米。</p>
+    </div>
+    <div class="skill-card">
+      <h4><span class="dot"></span>语言与文字</h4>
+      <p>CET6 (544) · CET4 (549) · 公众号运营经验 · 长期写作习惯 ·
+      善于将抽象需求转化为可执行 Prompt 与产品方案。</p>
+    </div>
+    <div class="skill-card">
+      <h4><span class="dot"></span>产品策划</h4>
+      <p>多次全国规划设计竞赛获奖经验，
+      具备从用户洞察→策略构建→落地推进的完整产品策划链路。</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-l">© 2026 张君洁 · Crafted with Claude Code</div>
+  <div class="foot-r">
+    <a href="mailto:3051133968@qq.com">邮箱联系</a>
+    <a href="tel:17774977869">电话</a>
+  </div>
+</footer>
+
+</div>
+
+</body>
+</html>
